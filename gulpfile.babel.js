@@ -151,6 +151,10 @@ gulp.task("watch", () => {
     quiet: true,
   })
 
+  $.watch("./src/**/*.js", $.batch((events, callback) => {
+    gulp.start("server:babel", callback)
+  }))
+
   // Stylus
   $.watch("./styles/**/*.styl", $.batch((events, callback) => {
     gulp.start("stylus", callback)
