@@ -1,14 +1,11 @@
 import React from "react"
 import {Site} from "../components/site"
+import SiteHeader from "../components/header"
 
 class Home extends React.Component {
   render() {
     return (
-      <Site>
-        <main className="site-main">
-          {this.props.children}
-        </main>
-      </Site>
+      <SiteHeader title="Title" />
     )
   }
 }

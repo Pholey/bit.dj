@@ -8,12 +8,10 @@ import {Test1, Test2} from "./pages/test"
 
 export default (flux) => {
   return (
-    <Route>
-      <Route component={Site} path="/" >
-        <IndexRoute component={Home}/>
-        <Route component={Test1} path="/test1" />
-        <Route component={Test2} path="/test2" />
-      </Route>
+    <Route component={Site} path="/">
+      <IndexRoute component={Home}/>
+      <Route component={Test1} path="/test1" />
+      <Route component={Test2} path="/test2" />
     </Route>
   )
 }

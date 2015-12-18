@@ -1,32 +1,43 @@
 import React from "react"
 import cx from "classnames"
 import {SiteHeader} from "./header"
+import connectToStores from "../lib/connectToStores"
 
-export default class Site extends React.Component {
-  constructor() {
-    super(...arguments)
-    this.state = {
-      hamburgerOpen: false,
-    }
+class Site extends React.Component {
+  static contextTypes = {
+    flux: React.PropTypes.object.isRequired,
   }
 
-  onToggleHamburger = () => {
-    this.setState({hamburgerOpen: !this.state.hamburgerOpen})
+  static stores = ["Site"]
+
+  constructor() {
+    super(...arguments)
+  }
+
+  toggleHamburger = () => {
+    this.context.flux.actions.Site.toggleHamburger()
   }
 
   render() {
-    let expandedClass = this.state.hamburgerOpen ? "expanded" : ""
-    console.log("props!", this.props)
+    let expandedClass = this.props.Site.hamburgerOpen ? "expanded" : ""
+
     return (
       <div className="site">
-        <SiteHeader onToggleHamburger={this.onToggleHamburger} title="lel" />
-        <div className="site-content">
-          <div className={cx("hamburger-menu", expandedClass)}></div>
-          <div className="page-container">
-            {this.props.children}
+        <div className={cx("hamburger-menu", expandedClass)}>
+          <div className="header">
+            <div className="title">
+              <i onClick={this.toggleHamburger} className="fa fa-bars" />
+              <span>bit.dj</span>
+            </div>
           </div>
+        </div>
+        <div className="site-content">
+          {this.props.children}
         </div>
       </div>
     )
   }
 }
+
+
+export default connectToStores(Site)

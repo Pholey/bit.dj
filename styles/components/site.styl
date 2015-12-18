@@ -1,8 +1,24 @@
 .site {
   width: 100%;
   height: 100%;
+  display: flex;
+  flex-direction: row;
+
+  .fixed {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 9001;
+    display: block;
+    height: 100vh;
+  }
+
   .site-content {
+    // HACK!
+    width: 100%;
     height: calc("100% - 61px");
+    display: flex;
+    flex-direction: row;
   }
   .hamburger-menu {
     height: 100%;
