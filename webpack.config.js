@@ -39,6 +39,10 @@ module.exports = {
       dir: path.join(__dirname, "src"),
     }),
     configPlugin,
+    new webpack.ProvidePlugin({
+      fetch: "imports?this=>global!exports?global.fetch!whatwg-fetch",
+      regeneratorRuntime: "imports?this=>global!exports?global.regeneratorRuntime!regenerator/runtime"
+    }),
     new ExtractTextPlugin("[name].css"),
     new webpack.DefinePlugin({
       "process.env": {
