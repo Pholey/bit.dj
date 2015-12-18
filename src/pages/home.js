@@ -1,10 +1,16 @@
 import React from "react"
+import {Site} from "../components/site"
 
-
-export default class Home extends React.Component {
+class Home extends React.Component {
   render() {
     return (
-      <div>Welcome home</div>
+      <Site>
+        <main className="site-main">
+          {this.props.children}
+        </main>
+      </Site>
     )
   }
 }
+
+export default Home
