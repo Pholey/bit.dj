@@ -4,14 +4,13 @@ import {Route, IndexRoute} from "react-router"
 import Home from "./pages/home"
 import Site from "./components/site"
 
-import {Test1, Test2} from "./pages/test"
+import ChannelListing from "./pages/channels"
 
 export default (flux) => {
   return (
     <Route component={Site} path="/">
       <IndexRoute component={Home}/>
-      <Route component={Test1} path="/test1" />
-      <Route component={Test2} path="/test2" />
+      <Route component={ChannelListing} path="/channels" />
     </Route>
   )
 }

@@ -3,6 +3,8 @@ import cx from "classnames"
 import {SiteHeader} from "./header"
 import connectToStores from "../lib/connectToStores"
 
+import {Link} from "react-router"
+
 class Site extends React.Component {
   static contextTypes = {
     flux: React.PropTypes.object.isRequired,
@@ -27,8 +29,14 @@ class Site extends React.Component {
           <div className="header">
             <div className="title">
               <i onClick={this.toggleHamburger} className="fa fa-bars" />
-              <span>bit.dj</span>
+              <Link to="/">bit.dj</Link>
             </div>
+          </div>
+          <div className="items">
+            <Link to="/channels" className="nav-item">
+              <i className="fa fa-hashtag"/>
+              Channels
+            </Link>
           </div>
         </div>
         <div className="site-content">
