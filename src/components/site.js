@@ -26,17 +26,19 @@ class Site extends React.Component {
     return (
       <div className="site">
         <div className={cx("hamburger-menu", expandedClass)}>
-          <div className="header">
-            <div className="title">
-              <i onClick={this.toggleHamburger} className="fa fa-bars" />
-              <Link to="/">bit.dj</Link>
+          <div className="hamburger-menu-contents">
+            <div className="header">
+              <div className="title">
+                <i onClick={this.toggleHamburger} className="fa fa-bars" />
+                <Link to="/">bit.dj</Link>
+              </div>
             </div>
-          </div>
-          <div className="items">
-            <Link to="/channels" className="nav-item">
-              <i className="fa fa-hashtag"/>
-              Channels
-            </Link>
+            <div className="items">
+              <Link to="/channels" className="nav-item">
+                <i className="fa fa-hashtag"/>
+                Channels
+              </Link>
+            </div>
           </div>
         </div>
         <div className="site-content">

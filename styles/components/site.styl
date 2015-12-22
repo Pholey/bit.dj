@@ -3,10 +3,9 @@
   height: 100%;
   display: flex;
   flex-direction: row;
-  transition:all 1s ease-in;
+  background: $bitdj-site-background;
 
   .site-content {
-    transition:all 1s ease-in;
 
     > * {
       width: 100%;
@@ -19,14 +18,14 @@
     flex-direction: row;
   }
   .hamburger-menu {
+    position: relative;
     height: 100%;
     border-right: 1px solid $bitdj-color-border;
+    background-color: $bitdj-color-background;
     display: flex;
     flex-direction: column;
     align-items: center;
     color: white;
-    transition: all 1s ease-in;
-
 
     .items {
       text-align: center;
@@ -36,7 +35,7 @@
       display: flex;
       height: 25px;
       padding: 10px 0 10px 18px;
-      width: 220px;
+      width: 202px;
       align-items: center;
     }
 
@@ -47,10 +46,11 @@
 
     &.expanded {
       width: 240px;
-      background-color: $bitdj-color-background;
     }
 
-    &.expanded .title { justify-content: flex-start; }
+    &.expanded .title {
+      justify-content: flex-start;
+    }
 
   }
 }
